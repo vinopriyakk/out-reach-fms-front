@@ -1,0 +1,197 @@
+<div class="col-md-12 mx-1">
+
+    <div class="collapse">
+        <div class="card card-body" style="text-align: center;font-weight: bold;">
+            <div *ngIf="questionType == 'COMPLETED' else feedbackEventName">
+                <h3>{{responseMessage}}</h3>
+                <div style="font-size: 14px;font-weight: 400;">
+                    <p>Feedback like this help us constantly improve our outreach experiences by knowing what we are
+                        doing
+                        right and what we can work on. SO we appreciate you taking the time to send us this helpful
+                        response.</p>
+                    <p>Don't hesitate to reach out if you have any more questions, comments or concerns.</p>
+                    <p style="margin-bottom: 0px;">cheers,</p>
+                    <p>Outreach Team</p>
+                </div>
+            </div>
+            <ng-template #feedbackEventName>
+                Feedback Request for {{eventName}}
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="questionType == 'PC'">
+    <div class="my-4">
+        <div class="col-md-12">
+            <a class="collapseBar col-md-12" data-toggle="collapse" href="#rating" role="button" aria-expanded="false"
+                aria-controls="rating">
+                {{feedbackRatingQuestion.ratingQuestion}}
+            </a>
+            <div class="collapse" id="rating">
+                <div class="card card-body">
+                    <div class="col-md-12 col-xs-12 form-inline" style="justify-content: center;">
+
+                        <div class='smileyAlign'>
+                            <label>
+                                <input type="radio" name="answer" class="card-input-element" />
+                                <div class="panel panel-default card-input1" (click)="selectRating(1, 'fas')">
+                                    <div class="panel-body">
+                                        <i class='{{angry}} fa-angry'></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <div class='smileyAlign'>
+                            <label>
+                                <input type="radio" name="answer" class="card-input-element" />
+                                <div class="panel panel-default card-input1" (click)="selectRating(2, 'fas')">
+                                    <div class="panel-body">
+                                        <i class="{{frown}} fa-frown" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class='smileyAlign'>
+                            <label>
+                                <input type="radio" name="answer" class="card-input-element" />
+                                <div class="panel panel-default card-input1" (click)="selectRating(3, 'fas')">
+                                    <div class="panel-body">
+                                        <i class="{{meh}} fa-meh" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class='smileyAlign'>
+                            <label>
+                                <input type="radio" name="answer" class="card-input-element" />
+                                <div class="panel panel-default card-input1" (click)="selectRating(4, 'fas')">
+                                    <div class="panel-body">
+                                        <i class="{{smile}} fa-smile" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <div class='smileyAlign'>
+                            <label>
+                                <input type="radio" name="answer" class="card-input-element" />
+                                <div class="panel panel-default card-input1" (click)="selectRating(5, 'fas')">
+                                    <div class="panel-body">
+                                        <i class='{{grinHeart}} fa-grin-hearts' style="background-color: none !important;"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 my-4">
+            <a class="collapseBar col-md-12" data-toggle="collapse" href="#likes" role="button" aria-expanded="false"
+                aria-controls="likes">
+                {{feedbackRatingQuestion.likeQuestion}}
+            </a>
+            <div class="collapse" id="likes">
+                <div class="card card-body">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" id="comment" placeholder="Your thoughts here" [(ngModel)]="likes"></textarea>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 my-4">
+            <a class="collapseBar col-md-12" data-toggle="collapse" href="#dislikes" role="button" aria-expanded="false"
+                aria-controls="dislikes">
+                {{feedbackRatingQuestion.dislikeQuestion}}
+            </a>
+            <div class="collapse" id="dislikes">
+                <div class="card card-body">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" id="comment" placeholder="Your thoughts here" [(ngModel)]="dislikes"></textarea>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-2">
+            <div class="col-md-12">
+                <div class="form-inline" style="float: right;">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button class="btn btn-success text-uppercase" (click)="reset()">Reset</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button class="btn btn-danger text-uppercase"
+                                (click)="saveRatingAnswer()"><i class="fab fa-telegram-plane"></i> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="questionType == 'UN' || questionType == 'NA'">
+    <div class="my-4">
+        <div class="col-md-12">
+            <a class="collapseBar col-md-12" data-toggle="collapse" href="#rating" role="button" aria-expanded="false"
+                aria-controls="rating">
+                {{feedbackChoiceAnswers[0].question.question}}
+            </a>
+            <div class="collapse" id="rating">
+                <div class="card card-body">
+                    <div class="col-md-12 col-xs-12 form-inline" style="justify-content: center;">
+
+                        <div *ngFor="let answer of feedbackChoiceAnswers">
+                            <div>
+                                <label>
+                                    <input type="radio" name="answer" class="card-input-element" />
+                                    <div class="panel panel-default card-input"
+                                        (click)="selectAnswer(answer.id, answer.answer)">
+                                        <div class="panel-body">
+                                            {{answer.answer}}
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="my-2">
+                <div class="col-md-12">
+                    <div class="form-inline" style="float: right;">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button class="btn btn-success text-uppercase" (click)="reset()">Reset</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button class="btn btn-danger text-uppercase"
+                                    (click)="saveChoiceAnswer()"><i class="fab fa-telegram-plane"></i> Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

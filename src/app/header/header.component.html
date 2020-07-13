@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default"> 
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <span class="singlespan">Outreach FMS</span>
+                <span><a  class="left colortext"  routerLink="/welcome">Dashboard</a></span>
+                <span><a  class="left colortext" [routerLink]="['/events']">Events</a></span>
+                <span><a  class="left colortext" [routerLink]="['/reports']">Reports</a></span>
+                <span [hidden]="hide || pmo || poc"><a class="left colortext" [routerLink]="['/configuration']">Configuration</a></span>
+            </ul>  
+              <ul class="nav navbar-right">
+                  <span class="left colortext">{{userRole}}</span>
+                  <span><a  class="left colortext" routerLink="logout">Logout</a></span>
+            </ul>        
+        </div>
+</nav>

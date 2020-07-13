@@ -1,0 +1,43 @@
+.navbar-default{
+    background-color: #0033a0;
+}
+.navbar-brand{
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.colortext{
+    color:white;
+    padding: 32px;
+    font-size: 16px;
+}
+.left{
+   margin-left: 30px;
+}
+.rectangle {
+    height: 90px;
+    width: 90px;
+  }
+.spancolor{
+    color:white;  
+    font-size: 15px;
+    margin-left: 10px;
+    text-align: center;
+}  
+  table {
+    float: left;
+    margin: 20px;
+  }
+  .btn-circle.btn-sm { 
+    width: 18px;  
+    height: 18px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+} 
+.navbar-right {
+    float: right!important;
+    margin-right: 3px;
+}
