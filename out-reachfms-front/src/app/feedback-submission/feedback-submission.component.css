@@ -1,0 +1,98 @@
+.collapseBar{
+    /* text-align: center; */
+    display: inline-block;
+    background: #2929a3;
+    color: #fff;
+    padding: 5px 0px 5px 10px;
+    box-shadow: 1px 1px 3px #00000073;
+    text-decoration: none;
+    font-size: 14px;
+}
+.iconAlign{
+    display: block;
+    text-align: center;
+    font-size: 2.7em;
+}
+
+/**
+  Default Markup
+**/
+
+body {
+    background: #F0E5E1 ;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  
+  /**
+    Component
+  **/
+  
+  label {
+      width: 100%;
+  }
+  
+  .card-input-element {
+      display: none;
+  }
+  
+  .card-input {
+      margin: 10px;
+      padding: 00px;
+  }
+  
+  .card-input:hover, .card-input1:hover {
+      cursor: pointer;
+  }
+
+  .card-input{
+    padding: 20px 15px;
+    display: inline-table;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .card-input-element:checked + .card-input {
+       /* box-shadow: 0 0 1px 1px #2ecc71; */
+       background: #2929a3;
+   }
+
+   .far, .fas{
+       font-size: 100px;
+   }
+
+   .card-input1{
+    padding: 20px 15px;
+    display: inline-table;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .smileyAlign{
+      margin: 0px 2%;
+  }
+  .fa-angry{
+      color: #4aa733;
+  }
+
+  .fa-frown{
+    color: #bec912;
+}
+
+.fa-meh{
+    color:#b0ac29;
+}
+
+.fa-smile{
+    color: #839e15;
+}
+
+.fa-grin-hearts{
+    color: #c02550;
+}

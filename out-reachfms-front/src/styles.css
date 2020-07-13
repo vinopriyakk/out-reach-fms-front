@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.container{
+    background-color: #f2f2ff;
+}
+table, th, td {
+    border: 2px solid rgb(234, 229, 229) !important;
+    padding: .35rem !important;
+    font-size: 13px !important;
+}
+.innerEventTable td:first-child{
+    width: 25%;
+}
+.thColor{
+    background: #2929a3;
+    color: #fff;
+    border: none !important;
+}

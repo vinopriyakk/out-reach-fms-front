@@ -1,0 +1,183 @@
+<html>
+    <body>
+       <div class="container">
+                <nav class="navbar navbar-default"> 
+                         <span  class="spancolor">ACTIONS
+                            <ul class="nav navbar-nav navbar-right">
+                              <button type="button" class="btn btn-light btn-circle btn-sm">-></button> 
+                              <button type="button" class="btn btn-success btn-circle btn-sm">+</button> 
+                              <button type="button" class="btn btn-warning btn-circle btn-sm">-</button> 
+                              <button type="button" class="btn btn-danger btn-circle btn-sm">x</button> 
+                            </ul>
+                         </span>
+                </nav>
+       </div>
+       <div class="container">
+            <table style="width:500px" height="50%">
+              <tbody>
+                <tr>
+                    <td class="rectangle" bgcolor="lightblue">  
+                      <img class="rg_i Q4LuWd" data-src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fbanner2.cleanpng.com%2F20180425%2Fwwe%2Fkisspng-computer-icons-industry-mail-computer-software-illustrator-icon-5ae01695c9db73.3254661115246352858268.jpg&imgrefurl=https%3A%2F%2Fwww.cleanpng.com%2Fpng-computer-icons-industry-mail-computer-software-ill-1513501%2F&tbnid=EZXlDR0hAmbq3M&vet=12ahUKEwjpyYmjoLbqAhUdGbcAHYgsAvYQMygFegUIARDWAQ..i&docid=7xLsQsjswfwLQM&w=900&h=520&q=mail%20image%20logo&ved=2ahUKEwjpyYmjoLbqAhUdGbcAHYgsAvYQMygFegUIARDWAQ" width="50" height="50">
+                      Email Report <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Employee ID 
+                      <input type="text" placeholder="Enter Email Address" name="emailId" [(ngModel)]="emailId"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="button" class="btn btn-button" (click)="sendReportExcelInEmail()">Send Email</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="width:500px" height="50%">
+                <tbody>
+                  <tr>
+                      <td class="rectangle" bgcolor="lightgoldenrodyellow">  
+                          <img class="rg_i Q4LuWd" data-src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fbanner2.cleanpng.com%2F20180425%2Fwwe%2Fkisspng-computer-icons-industry-mail-computer-software-illustrator-icon-5ae01695c9db73.3254661115246352858268.jpg&imgrefurl=https%3A%2F%2Fwww.cleanpng.com%2Fpng-computer-icons-industry-mail-computer-software-ill-1513501%2F&tbnid=EZXlDR0hAmbq3M&vet=12ahUKEwjpyYmjoLbqAhUdGbcAHYgsAvYQMygFegUIARDWAQ..i&docid=7xLsQsjswfwLQM&w=900&h=520&q=mail%20image%20logo&ved=2ahUKEwjpyYmjoLbqAhUdGbcAHYgsAvYQMygFegUIARDWAQ" width="50" height="50">
+                        Future Implementation! <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        This place holder can be used for adding any other actions in future
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+        <div class="container">
+                <nav class="navbar navbar-default"> 
+                         <span  class="spancolor">EVENTS REPORTS
+                          <ul class="nav navbar-nav navbar-right">
+                          <button type="button" class="btn btn-light btn-circle btn-sm">-></button> 
+                          <button type="button" class="btn btn-success btn-circle btn-sm">+</button> 
+                          <button type="button" class="btn btn-warning btn-circle btn-sm">-</button> 
+                          <button type="button" class="btn btn-danger btn-circle btn-sm">x</button> </ul>
+                         </span>
+        
+                </nav>
+                    <div class="container">
+                        <ul class="nav navbar-nav navbar-right">
+                            <form (ngSubmit)="downloadFileExcel()">
+                               <button type="button" class="btn btn-danger">CLEAR FILTER</button>&nbsp;&nbsp;
+                               <button class="btn btn-primary">DOWNLOAD EXCEL</button>
+                            </form>
+                        </ul>
+                    </div>
+            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="80%">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Event ID</th>
+                                <th>Month</th>
+                                <th>Beneficiary Name</th>
+                                <th>Base Location</th>
+                                <th>Council Name</th>
+                                <th>Business Unit</th>
+                                <th>
+                                    <table style="width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <th colspan="2">Rating</th>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <th>Average</th>
+                                                <th>Star</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>Status</th>
+                                <th>Volunteers</th>
+                                <th>Volunteering Hours</th>
+                                 <th>Travel Hours</th>
+                                <th>Lives Impacted</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let event of events; let i = index'>
+                                <td>{{i+1}}</td>
+                                <td>{{event.eventId}}</td>
+                                <td>{{event.eventDate}}</td>
+                                <td>{{event.beneficiaryName}}</td>
+                                <td>{{event.baseLocation}}</td>
+                                <td>{{event.councilName}}</td>
+                                <td>businessUnit</td>
+                                <td>
+                                    <table style="width: 100%;border: none !important;height: 69px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>{{event.averageRating}}</td>
+                                                <td>{{event.averageRating}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>{{event.status}}</td>
+                                <td>{{event.totalVolunteers}}</td>
+                                <td>{{event.volunteerHours}}</td>
+                                <td>{{event.totalTravelHours}}</td>
+                                <td>{{event.livesImpacted}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+           <!-- <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Event ID</th>
+                        <th class="th-sm">Beneficiary Name</th>
+                        <th class="th-sm">Base Location</th>
+                        <th class="th-sm">Council Name</th>
+                        <th class="th-sm">Project</th>
+                        <th class="th-sm">Business Unit</th>
+                        <th class="th-sm">Rating</th>
+
+
+                    </tr>
+                </thead> 
+                <tbody >
+                    <tr>
+                        <td>EVNT00046103</td>
+                        <td>Kamarajar Illam,Tambaram</td>
+                        <td>Chennai</td>
+                        <td>Chennai BFS Outreach</td>
+                        <td>FMS</td>
+                        <td>AVM-AIA- DI</td>
+                        <td>Four Star</td>
+                    </tr>
+                    <tr>
+                            <td>EVNT00046103</td>
+                            <td>Kamarajar Illam,Tambaram</td>
+                            <td>Chennai</td>
+                            <td>Chennai BFS Outreach</td>
+                            <td>FMS</td>
+                            <td>AVM-AIA- DI</td>
+                            <td>Four Star</td>
+                        </tr>
+                        <tr>
+                                <td>EVNT00046103</td>
+                                <td>Kamarajar Illam,Tambaram</td>
+                                <td>Chennai</td>
+                                <td>Chennai BFS Outreach</td>
+                                <td>FMS</td>
+                                <td>AVM-AIA- DI</td>
+                                <td>Four Star</td>
+                            </tr>
+                            <tr>
+                                    <td>EVNT00046103</td>
+                                    <td>Kamarajar Illam,Tambaram</td>
+                                    <td>Chennai</td>
+                                    <td>Chennai BFS Outreach</td>
+                                    <td>FMS</td>
+                                    <td>AVM-AIA- DI</td>
+                                    <td>Four Star</td>
+                                </tr>
+                                <tr>
+                                        <td>EVNT00046103</td>
+                                        <td>Kamarajar Illam,Tambaram</td>
+                                        <td>Chennai</td>
+                                        <td>Chennai BFS Outreach</td>
+                                        <td>FMS</td>
+                                        <td>AVM-AIA- DI</td>
+                                        <td>Four Star</td>
+                                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </body>
+</html>

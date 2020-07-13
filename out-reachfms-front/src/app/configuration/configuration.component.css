@@ -1,0 +1,17 @@
+.navbar-default{
+    background-color: dodgerblue;
+}
+.navbar-brand{
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.colortext{
+    color:white;
+    padding: 32px;
+    font-size: 20px;
+}
+.left{
+   margin-left: 30px;
+}
